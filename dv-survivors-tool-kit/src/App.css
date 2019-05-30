@@ -24,4 +24,69 @@
   color: #61dafb;
 }
 
+.tab-list {
+  border-bottom: 1px solid #ccc;
+  padding-left: 0;
+}
 
+.tab-list-item {
+  display: inline-block;
+  list-style: none;
+  margin-bottom: -1px;
+  padding: 0.5rem 0.75rem;
+}
+
+.tab-list-active {
+  background-color: white;
+  border: solid #ccc;
+  border-width: 1px 1px 0 1px;
+}
+
+input {
+  width: 25%;
+  background-color: rgb(81, 187, 178);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+}
+
+input:hover {
+  background-color: rgb(197, 238, 214);
+}
+
+h1 {
+  font-family: monospace;
+  font-style: oblique;
+  font-size: 3em;
+  color: rgba(54, 47, 47, 0.795); 
+  
+}
+
+h5 {
+  font-family: monospace;
+  font-size: 1em;
+  color: rgba(54, 47, 47, 0.795);
+}
+
+.nav-tabs button {
+  border: 1px solid transparent;
+  border-radius: 3px;
+  padding: 8px 16px;
+  font-size: 1em;
+}
+
+.nav-tabs button:focus {
+  outline: none;
+}
+
+.nav-tabs button:hover {
+  cursor: pointer;
+  background-color: lightblue;
+  color: #fff;
+}
+
+.nav-tabs button.active {
+  border-color: lightblue;
+}

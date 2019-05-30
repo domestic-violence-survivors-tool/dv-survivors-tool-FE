@@ -1,20 +1,20 @@
+import React, { Component } from 'react';
+import { render } from "react-dom";
+
+import FormsContainer from './Components/FormsContainer';
 
 import './App.css';
-import React, { Component } from 'react';   
-import BudgetForm from './Components /BudgetForm';
-import RelocationForm from './Components /RelocationForm';
 
-class App extends Component {  
+class App extends Component {
   render() {
     return (
       <div className="container">
-        <RelocationForm />
-        <BudgetForm />
+        <FormsContainer />
       </div>
     );
   }
 }
 
-export default App; 
+export default App;
 
 
