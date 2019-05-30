@@ -30,8 +30,12 @@ class App extends React.Component {
   render() {
     return (
       <div className="container">
-        <FormsContainer />
-        { <Accordion data={this.state.stateData} /> }
+        <div className="left">
+          <Accordion data={this.state.stateData} />
+        </div>
+        <div className="right">
+          <FormsContainer />
+        </div>
       </div>
     );
   }

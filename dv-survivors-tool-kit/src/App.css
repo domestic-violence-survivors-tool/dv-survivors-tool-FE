@@ -4,7 +4,11 @@
 }
 
 .container {
-  text-align: center;
+  display: flex;
+}
+
+.container .left, .container .right {
+  width: 50%;
 }
 
 .App-header {
@@ -22,10 +26,7 @@
   color: #61dafb;
 }
 
-
-
 input {
-  width: 25%;
   background-color: rgb(81, 187, 178);
   color: white;
   padding: 14px 20px;
@@ -39,8 +40,8 @@ input:hover {
 }
 
 h1 {
-  font-family: monospace;
-  font-style: oblique;
+  text-transform: uppercase;
+  font-family: 'Josefin Slab', serif;
   font-size: 3em;
   color: rgba(54, 47, 47, 0.795);
 }
@@ -51,15 +52,25 @@ h5 {
   color: rgba(54, 47, 47, 0.795);
 }
 
+.budgetContainer {
+  flex-direction: column;
+  justify-content: center;
+  align-self: flex-end;
+}
 
-
-
+form {
+  text-align: center;
+  border: solid gray;
+  margin-top: 70px;
+  margin-right: 50px;
+  padding: 10px;
+  
+}
 
 /* accordion */
 
 @import url(https://fonts.googleapis.com/css?family=Josefin+Slab:400,700);
 @import url(https://fonts.googleapis.com/css?family=Maven+Pro);
-
 svg {
   position: absolute;
   width: 100%;
@@ -73,13 +84,13 @@ h2 {
   text-align: center;
   text-transform: uppercase;
   font-family: 'Josefin Slab', serif;
-  font-size: 66px;
+  font-size: 20px;
   margin-top: 10vh;
   letter-spacing: 10px;
 }
 
 .accordion-container {
-  width: 60%;
+  
   min-width: 500px;
   margin: 5vh auto;
   border-radius: 5px;
@@ -97,10 +108,6 @@ h2 {
   display: inline-block;
 }
 
-.answer {
-  color: black;
-  font-size: 20px;
-}
 
 .summary {
   font-family: 'Josefin Slab', serif;
@@ -117,7 +124,7 @@ h2 {
 .folding-pannel {
   display: block;
   transition: all 0.2s ease-in;
-  line-height: 40px;
+  line-height: 60px;
   border-top: 2px solid #dddddd;
 }
 
@@ -134,11 +141,12 @@ h2 {
 }
 
 .active .folding-pannel {
-  transform: perspective(350px) rotateX(0deg);
+  transform: perspective(400px) rotateX(0deg);
   transition: all 0.4s ease-in-out;
-  height: 50px;
+  height: 100px;
   line-height: 50px;
-  text-indent: 40px;
+  text-indent: 10px
+  
 }
 
 .Accordion-box {
@@ -146,13 +154,13 @@ h2 {
   flex-direction: column;
 }
 
- .answer {
+.answer {
   display: flex;
-  font-size: 16px;
-  
-  
+  flex-direction: row;
+  font-size: 12px;
 }
-.rent {
-  justify-content: flex-start;
-  
+
+.stat {
+  display: flex;
+  flex-wrap: wrap;
 }

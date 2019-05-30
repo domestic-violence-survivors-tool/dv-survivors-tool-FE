@@ -13,7 +13,7 @@ class FormsContainer extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div>
         <Route path="/" exact={true} component={BudgetForm} />
         <Route path="/relocation" exact={true} component={RelocationForm} />
       </div>

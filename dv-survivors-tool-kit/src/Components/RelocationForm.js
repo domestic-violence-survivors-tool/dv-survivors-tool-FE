@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class RelocationForm extends Component {
     constructor(props) {
@@ -41,7 +42,9 @@ class RelocationForm extends Component {
         const total = hotel + rentaldeposit + firstmonthsrent + utilityconnectionfee + storage + carrental + gasforcar + connectionfee + movingtruck + gasfortruck + mentalhealth + incomeloss + security;
 
         return (
-            <form className="container">
+            
+        <div>
+            <form>
                 <label>
                     <h1>Relocation Costs</h1>
                 </label>
@@ -101,6 +104,12 @@ class RelocationForm extends Component {
                 <h5>Total</h5>
                 {total}
             </form>
+            <div>
+            <Link to="/relocation"><button type="button">
+          Next
+     </button></Link>
+            </div>
+        </div>
         );
     }
 }
