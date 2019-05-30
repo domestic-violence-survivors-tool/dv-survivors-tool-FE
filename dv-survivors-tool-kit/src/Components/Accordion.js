@@ -1,8 +1,5 @@
 import React from "react";
 
-import { mockData } from '../data';
-
-// update component as necessary based on data shape
 class AccordionItem extends React.Component {
     constructor() {
         super();
@@ -21,11 +18,14 @@ class AccordionItem extends React.Component {
     render() {
         const { data } = this.props;
         const activeClass = this.state.active ? "active" : "inactive";
+        const rent = data.rent[0];
         return (
             <div className={activeClass} onClick={this.toggle}>
                 <span className="summary">{data.state}</span>
                 <span className="folding-pannel answer">
-                    {data.stateid}
+                    <span className="crime">Crime Rating: {data.crimeRating}</span>
+                    <span className="rent">One-bedroom Rent: ${rent.oneBedRoomApartmentRent}</span>
+                    <span className="twobedrent">Two-bedroom Rent: ${rent.twoBedRoomApartmentRent}</span>
                 </span>
             </div>
         );
@@ -33,17 +33,24 @@ class AccordionItem extends React.Component {
 }
 
 class Accordion extends React.Component {
+    constructor() {
+        super()
+    }
+
     render() {
+        console.log(this.props.data);
         return (
             <div className="Accordion-box">
-                <h2>State Info</h2>
+                <h2>Rent Resource</h2>
                 <div className="accordion-container">
-                    {mockData.map((rec, idx) =>
+                    {this.props.data.map((rec, idx) =>
                         <AccordionItem key={idx} data={rec} />
                     )}
                 </div>
             </div>
         )
+    
+        
     }
 }
 

@@ -22,7 +22,7 @@ class App extends React.Component {
   fetchData = () => {
     axios.get('https://bps-dvst.herokuapp.com/state/states')
       .then(res => {
-        this.setState({ stateData: res });
+        this.setState({ stateData: res.data });
       })
       .catch(err => console.log(err));
   }
@@ -31,7 +31,7 @@ class App extends React.Component {
     return (
       <div className="container">
         <FormsContainer />
-        <Accordion data={this.state.stateData} />
+        { <Accordion data={this.state.stateData} /> }
       </div>
     );
   }
