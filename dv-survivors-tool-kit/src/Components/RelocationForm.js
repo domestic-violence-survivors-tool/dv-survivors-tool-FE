@@ -32,7 +32,7 @@ class RelocationForm extends Component {
     handleNumberInput = (e) => {
         const input = e.target;
         const number = parseInt(input.value, 10);
-        const value = isNaN(number) ? 0 : number;
+        const value = isNaN(number) ? '' : number;
         this.setState({ [input.name]: value });
     }
 
