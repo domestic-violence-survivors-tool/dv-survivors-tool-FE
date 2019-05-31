@@ -43,7 +43,7 @@ class RelocationForm extends Component {
 
         return (
 
-            <div>
+            <div className="formContainer">
                 <form>
                     <label>
                         <h1>Relocation Costs</h1>
@@ -106,10 +106,11 @@ class RelocationForm extends Component {
                 </form>
                 <div>
                     <Link to="/">
+                    <div className="buttonbox">
                         <button>
                             Next!
                         </button>
-
+                        </div>
                     </Link>
                 </div>
             </div>

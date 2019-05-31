@@ -61,10 +61,13 @@ h5 {
 form {
   text-align: center;
   border: solid gray;
-  margin-top: 70px;
-  margin-right: 50px;
   padding: 10px;
   
+}
+
+.formContainer {
+  margin-top: 70px;
+  margin-right: 50px;
 }
 
 /* accordion */
@@ -143,7 +146,7 @@ h2 {
 .active .folding-pannel {
   transform: perspective(400px) rotateX(0deg);
   transition: all 0.4s ease-in-out;
-  height: 100px;
+  height: 300px;
   line-height: 50px;
   text-indent: 10px
   
@@ -156,7 +159,7 @@ h2 {
 
 .answer {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   font-size: 12px;
 }
 
@@ -165,8 +168,13 @@ h2 {
   flex-wrap: wrap;
 }
 
-.buttonWrapper {
-  
+.buttonbox {
+  display: flex;
+  justify-content: center;
+}
+
+a {
+  align-self: center;
 }
 
 button {
@@ -175,9 +183,37 @@ button {
   font-size: 16px;
   margin-top: 20px;
   font-weight: bold;
+  cursor: pointer;
+  align-self: center;
   
 }
 button:hover {
   background-color: rgb(197, 238, 214);
   color: white;
+}
+
+
+
+@media (max-width: 1000px) {
+  .container { 
+    flex-direction: column-reverse;
+    }
+  .budgetContainer {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+  }
+  h1{
+    font-size: 2em;
+  }
+  form {
+    justify-content: center;
+  }
+
+  .container .right, .container .left {
+    width: 100%;
+    margin: 20px;
+  }
+  
+  
 }

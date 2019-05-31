@@ -39,7 +39,7 @@ class BudgetForm extends Component {
     const total = transportation + food + healthinsurance + carinsurance + carloan + personalloan + cellphonebill + rent + utilities + savings;
 
     return (
-      <div>
+      <div className="formContainer">
         <form className="budgetContainer">
           <label>
             <h1>Monthly Budget</h1>
@@ -88,10 +88,10 @@ class BudgetForm extends Component {
             <h5>Total</h5>
             {total}
           </label>
-        </form>
-        <div>
+          </form>
+          <div>
           <Link to="/relocation">
-          <div className="butttonWrapper">
+          <div className="buttonbox">
               <button>
                 Next!
               </button>
