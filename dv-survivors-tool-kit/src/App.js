@@ -12,11 +12,21 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      stateData: []
+      stateData: [],
+      budgetTotal: 0,
+      relocationTotal: 0
     }
   }
   componentDidMount() {
     this.fetchData();
+  }
+
+  setBudget = (value) => {
+    this.setState({ budgetTotal: value });
+  }
+
+  setRelocation = (value) => {
+    this.setState({ relocationTotal: value });
   }
 
   fetchData = () => {
@@ -28,13 +38,24 @@ class App extends React.Component {
   }
 
   render() {
+    const { budgetTotal, relocationTotal } = this.state;
+
     return (
-      <div className="container">
-        <div className="left">
-          <Accordion data={this.state.stateData} />
+      <div>
+        <div className="header">
+          TITLE
         </div>
-        <div className="right">
-          <FormsContainer />
+        <div className="container">
+          <div className="left">
+            <Accordion data={this.state.stateData} />
+          </div>
+          <div className="right">
+            <FormsContainer
+              setBudget={this.setBudget}
+              setRelocation={this.setRelocation}
+              budget={budgetTotal}
+              relocation={relocationTotal} />
+          </div>
         </div>
       </div>
     );

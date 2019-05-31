@@ -23,7 +23,7 @@ class AccordionItem extends React.Component {
         const rentData = () => rent.map((rec, idx) => (
             <span className="stat" key={idx}>{rec.renttype}: ${rec.rent}</span>
         ))
-        
+
         return (
             <div className={activeClass} onClick={this.toggle}>
                 <span className="summary">{data.state}</span>
@@ -42,7 +42,6 @@ class Accordion extends React.Component {
     }
 
     render() {
-        console.log(this.props.data);
         return (
             <div className="Accordion-box">
                 <h2>Rent Resource</h2>

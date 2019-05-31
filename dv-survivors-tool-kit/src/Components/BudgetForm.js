@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 class BudgetForm extends Component {
   constructor(props) {
@@ -19,12 +18,14 @@ class BudgetForm extends Component {
     }
   }
 
-
-  handleFormSubmit = () => {
-
+  calculateTotal = () => {
+    const valuesArray = Object.values(this.state);
+    return valuesArray.reduce((prev, curr) => prev + curr);
   }
-  handleClearForm = () => {
 
+  handleSubmit = () => {
+    this.props.setBudget(this.calculateTotal());
+    this.props.history.push('/relocation');
   }
 
   handleNumberInput = (e) => {
@@ -36,7 +37,7 @@ class BudgetForm extends Component {
 
   render() {
     const { transportation, food, healthinsurance, carinsurance, carloan, personalloan, cellphonebill, rent, utilities, savings } = this.state;
-    const total = transportation + food + healthinsurance + carinsurance + carloan + personalloan + cellphonebill + rent + utilities + savings;
+    const total = this.calculateTotal();
 
     return (
       <div className="formContainer">
@@ -88,15 +89,11 @@ class BudgetForm extends Component {
             <h5>Total</h5>
             {total}
           </label>
-          </form>
-          <div>
-          <Link to="/relocation">
-          <div className="buttonbox">
-              <button>
-                Next!
-              </button>
-            </div>
-          </Link>
+        </form>
+        <div className="buttonbox">
+          <button onClick={this.handleSubmit}>
+            Next!
+            </button>
         </div>
       </div>
     );
