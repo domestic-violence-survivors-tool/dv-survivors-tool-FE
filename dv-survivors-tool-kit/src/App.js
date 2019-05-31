@@ -43,7 +43,7 @@ class App extends React.Component {
     return (
       <div>
         <div className="header">
-          TITLE
+          FREE FROM
         </div>
         <div className="container">
           <div className="left">

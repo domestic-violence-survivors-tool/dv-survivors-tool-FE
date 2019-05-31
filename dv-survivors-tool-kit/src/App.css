@@ -3,12 +3,28 @@
   align-content: center;
 }
 
+.header {
+  text-transform: uppercase;
+  font-family: 'Josefin Slab', serif;
+  font-size: 5em;
+  color: rgba(54, 47, 47, 0.795);
+  text-align: center;
+  border-bottom: 2px solid gray;
+  letter-spacing: 20px;
+  font-weight: bold;
+  
+
+}
+
 .container {
   display: flex;
 }
 
 .container .left, .container .right {
   width: 50%;
+}
+.container .right {
+  margin: 85px;
 }
 
 .App-header {
@@ -44,12 +60,14 @@ h1 {
   font-family: 'Josefin Slab', serif;
   font-size: 3em;
   color: rgba(54, 47, 47, 0.795);
+  letter-spacing: 6px;
 }
 
 h5 {
   font-family: monospace;
   font-size: 1em;
   color: rgba(54, 47, 47, 0.795);
+  letter-spacing: 2px;
 }
 
 .budgetContainer {
@@ -68,6 +86,18 @@ form {
 .formContainer {
   margin-top: 70px;
   margin-right: 50px;
+}
+
+.totals {
+  color: rgba(54, 47, 47, 0.795);
+  text-align: center;
+  font-family: 'Josefin Slab', serif;
+  font-size: 26px;
+  margin-top: 10vh;
+  letter-spacing: 6px;
+  padding: 20px;
+  
+
 }
 
 /* accordion */
@@ -155,6 +185,7 @@ h2 {
 .Accordion-box {
   display: flex;
   flex-direction: column;
+  align-self: center;
 }
 
 .answer {

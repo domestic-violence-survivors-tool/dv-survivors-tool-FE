@@ -3,12 +3,12 @@ import React from 'react';
 class TotalCosts extends React.Component {
     render() {
         return (
-            <div>
+            <div className="totals">
                 <div>
-                    Budget: {this.props.budget}
+                    Your monthly Budget is: ${this.props.budget}
                 </div>
                 <div>
-                    Relocation: {this.props.relocation}
+                    Your total cost for Relocation is: ${this.props.relocation}
                 </div>
             </div>
         );
