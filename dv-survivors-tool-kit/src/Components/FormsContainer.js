@@ -4,6 +4,7 @@ import { Route } from "react-router-dom";
 
 import BudgetForm from './BudgetForm';
 import RelocationForm from './RelocationForm';
+import TotalCosts from './TotalCosts';
 
 class FormsContainer extends Component {
   constructor() {
@@ -12,10 +13,13 @@ class FormsContainer extends Component {
   }
 
   render() {
+    const { setBudget, setRelocation, budget, relocation } = this.props;
+
     return (
       <div>
-        <Route path="/" exact={true} component={BudgetForm} />
-        <Route path="/relocation" exact={true} component={RelocationForm} />
+        <Route path="/" exact={true} render={(props) => <BudgetForm {...props} setBudget={setBudget} />} />
+        <Route path="/relocation" exact={true} render={(props) => <RelocationForm {...props} setRelocation={setRelocation} />} />
+        <Route path="/totals" render={() => <TotalCosts budget={budget} relocation={relocation} />} />
       </div>
     );
   }

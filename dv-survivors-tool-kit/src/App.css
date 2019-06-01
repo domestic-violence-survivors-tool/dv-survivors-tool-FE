@@ -3,12 +3,29 @@
   align-content: center;
 }
 
+.header {
+  text-transform: uppercase;
+  font-family: 'Josefin Slab', serif;
+  font-size: 5em;
+  color: rgba(54, 47, 47, 0.795);
+  text-align: center;
+  border-bottom: 2px solid gray;
+  letter-spacing: 20px;
+  font-weight: bold;
+  padding: 20px;
+  
+
+}
+
 .container {
   display: flex;
 }
 
 .container .left, .container .right {
   width: 50%;
+}
+.container .right {
+  margin: 85px;
 }
 
 .App-header {
@@ -44,12 +61,14 @@ h1 {
   font-family: 'Josefin Slab', serif;
   font-size: 3em;
   color: rgba(54, 47, 47, 0.795);
+  letter-spacing: 6px;
 }
 
 h5 {
   font-family: monospace;
   font-size: 1em;
   color: rgba(54, 47, 47, 0.795);
+  letter-spacing: 2px;
 }
 
 .budgetContainer {
@@ -61,10 +80,25 @@ h5 {
 form {
   text-align: center;
   border: solid gray;
-  margin-top: 70px;
-  margin-right: 50px;
   padding: 10px;
   
+}
+
+.formContainer {
+  margin-top: 70px;
+  margin-right: 50px;
+}
+
+.totals {
+  color: rgba(54, 47, 47, 0.795);
+  text-align: center;
+  font-family: 'Josefin Slab', serif;
+  font-size: 26px;
+  margin-top: 10vh;
+  letter-spacing: 6px;
+  padding: 20px;
+  
+
 }
 
 /* accordion */
@@ -143,7 +177,7 @@ h2 {
 .active .folding-pannel {
   transform: perspective(400px) rotateX(0deg);
   transition: all 0.4s ease-in-out;
-  height: 100px;
+  height: 300px;
   line-height: 50px;
   text-indent: 10px
   
@@ -152,11 +186,12 @@ h2 {
 .Accordion-box {
   display: flex;
   flex-direction: column;
+  align-self: center;
 }
 
 .answer {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   font-size: 12px;
 }
 
@@ -165,8 +200,13 @@ h2 {
   flex-wrap: wrap;
 }
 
-.buttonWrapper {
-  
+.buttonbox {
+  display: flex;
+  justify-content: center;
+}
+
+a {
+  align-self: center;
 }
 
 button {
@@ -175,9 +215,37 @@ button {
   font-size: 16px;
   margin-top: 20px;
   font-weight: bold;
+  cursor: pointer;
+  align-self: center;
   
 }
 button:hover {
   background-color: rgb(197, 238, 214);
   color: white;
+}
+
+
+
+@media (max-width: 1000px) {
+  .container { 
+    flex-direction: column-reverse;
+    }
+  .budgetContainer {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+  }
+  h1{
+    font-size: 2em;
+  }
+  form {
+    justify-content: center;
+  }
+
+  .container .right, .container .left {
+    width: 100%;
+    margin: 20px;
+  }
+  
+  
 }

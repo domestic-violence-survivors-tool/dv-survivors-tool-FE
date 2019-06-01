@@ -22,12 +22,14 @@ class RelocationForm extends Component {
         }
     }
 
-
-    handleFormSubmit = () => {
-
+    calculateTotal = () => {
+        const valuesArray = Object.values(this.state);
+        return valuesArray.reduce((prev, curr) => prev + curr);
     }
-    handleClearForm = () => {
 
+    handleSubmit = () => {
+        this.props.setRelocation(this.calculateTotal());
+        this.props.history.push('/totals');
     }
 
     handleNumberInput = (e) => {
@@ -39,11 +41,10 @@ class RelocationForm extends Component {
 
     render() {
         const { hotel, rentaldeposit, firstmonthsrent, utilityconnectionfee, storage, carrental, gasforcar, connectionfee, movingtruck, gasfortruck, mentalhealth, incomeloss, security } = this.state;
-        const total = hotel + rentaldeposit + firstmonthsrent + utilityconnectionfee + storage + carrental + gasforcar + connectionfee + movingtruck + gasfortruck + mentalhealth + incomeloss + security;
+        const total = this.calculateTotal();
 
         return (
-
-            <div>
+            <div className="formContainer">
                 <form>
                     <label>
                         <h1>Relocation Costs</h1>
@@ -104,13 +105,10 @@ class RelocationForm extends Component {
                     <h5>Total</h5>
                     {total}
                 </form>
-                <div>
-                    <Link to="/">
-                        <button>
-                            Next!
-                        </button>
-
-                    </Link>
+                <div className="buttonbox">
+                    <button onClick={this.handleSubmit}>
+                        Finish
+                    </button>
                 </div>
             </div>
         );

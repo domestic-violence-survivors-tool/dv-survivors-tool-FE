@@ -18,17 +18,18 @@ class AccordionItem extends React.Component {
     render() {
         const { data } = this.props;
         const activeClass = this.state.active ? "active" : "inactive";
-        const rent = data.rent[0];
-        
+        const rent = data.rent;
+
+        const rentData = () => rent.map((rec, idx) => (
+            <span className="stat" key={idx}>{rec.renttype}: ${rec.rent}</span>
+        ))
+
         return (
             <div className={activeClass} onClick={this.toggle}>
                 <span className="summary">{data.state}</span>
                 <span className="folding-pannel answer">
                     <span className="stat">Crime Rating: {data.crimeRating}</span>
-                    <span className="stat">Studio: ${rent.studioRoomApartmentRent}</span>
-                    <span className="stat">One-bedroom Rent: ${rent.oneBedRoomApartmentRent}</span>
-                    <span className="stat">Two-bedroom Rent: ${rent.twoBedRoomApartmentRent}</span>
-                    <span className="stat">Three-bedroom Rent: ${rent.threeBedRoomApartmentRent}</span>
+                    {rentData()}
                 </span>
             </div>
         );
@@ -41,7 +42,6 @@ class Accordion extends React.Component {
     }
 
     render() {
-        console.log(this.props.data);
         return (
             <div className="Accordion-box">
                 <h2>Rent Resource</h2>
@@ -52,8 +52,8 @@ class Accordion extends React.Component {
                 </div>
             </div>
         )
-    
-        
+
+
     }
 }
 
